@@ -1,0 +1,19 @@
+---
+const product = Astro.props.product;
+---
+
+<div>
+  <img src=`${product.image}` alt="product-image" />
+  <p>{product.name + " " + product.price}</p>
+</div>
+
+<style>
+  div {
+    background-color: gray;
+    padding: 20px;
+    margin: 5px;
+  }
+  img {
+    height: 200px;
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import shoppingCart from "/shopping-cart-outline.svg";
+import profile from "/profile.png";
+---
+
+<div class="main">
+  <h1 class="page-title">Avanti</h1>
+  <div>
+    <img class="profile" src={profile} />
+    <img class="cart" src={shoppingCart} />
+  </div>
+</div>
+
+<style>
+  .main {
+    height: 50px;
+    margin: 0;
+    padding: 4px;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .page-title {
+    color: white;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .cart,
+  .profile {
+    height: 30px;
+    width: 30px;
+    padding: 4px;
+  }
+</style>

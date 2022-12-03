@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const name = "Soni";
+import Navbar from "../components/Navbar.astro";
+import Product from "../components/ProductTile.astro";
 const data = await fetch(
   `https://cdn.builder.io/api/v2/content/product?apiKey=efd91d04819a414b8d0aac3f3223e60f`
 ).then((res) => res.json());
@@ -9,12 +10,25 @@ const products = data.results;
 ---
 
 <Layout title="Hello World">
-  <h1>Hello {name}</h1>
-
-  <ul>{products.map((product) => <li>{product?.data?.name}</li>)}</ul>
+  <Navbar />
+  <ul>
+    {
+      products.map((product) => (
+        <li>
+          <Product product={product?.data} />
+        </li>
+      ))
+    }
+  </ul>
 </Layout>
 <style>
   h1 {
     color: purple;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
   }
 </style>
